@@ -1246,6 +1246,7 @@ input[type='checkbox'] {
 
 .cards .card {
 	max-width: 21rem;
+	height: 620px;
 	margin-right: auto;
 	margin-bottom: 4rem;
 	margin-left: auto;
@@ -1348,6 +1349,12 @@ input[type='checkbox'] {
 	background-size: 1.125rem 1.75rem;
 }
 
+.Location{
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 /********************/
 /*     14. Date     */
