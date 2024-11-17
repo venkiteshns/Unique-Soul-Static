@@ -27,6 +27,9 @@
     <link href="css/swiper.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+    
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/Images/img-1.jpg">
@@ -69,18 +72,8 @@
                     <a class="nav-link page-scroll" href="#description">DETAILS</a>
                 </li>
 
-                <!-- Dropdown Menu -->          
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DATE</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE DETAILS</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
-                    </div>
-                </li>
-                <!-- end of dropdown menu -->
+                  
+              
 
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">CONTACT</a>
@@ -129,9 +122,10 @@
                 <div class="col-lg-12">
                     <div class="text-container">
                         
-                        <h1>GST Training Course</h1>
-                        <p class="p-large">Do you feel like you're doing a lot of guess work when it comes to SEO for your website? Take the SEO training course to change that</p>
-                        <a class="btn-solid-lg page-scroll" href="#register">REGISTER</a>
+                        <h1>UNIQUE SOUL</h1>
+                        <h4 style="color: white;">TAX SOLUTIONS</h4>
+                        <p class="p-large">Unlock seamless GST compliance and watch your business thrive-expert support, tailored solutions, and peace of mind guaranteed!</p>
+                        <a class="btn-solid-lg page-scroll" href="#register">REGISTER FOR COURSE</a>
                         <a class="btn-outline-lg page-scroll" href="#instructor">DISCOVER</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -191,7 +185,7 @@
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>Register Using The Form</h2>
-                        <p>It's easy to register for the course, just fill out the form and click submit. Then you will be registered for one of the best SEO training courses in the industry</p>
+                        <p>It's easy to register for the course, just fill out the form and click Register. Then you will be registered for one of the best GST practical courses in the industry</p>
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
@@ -203,7 +197,7 @@
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body"><strong>You will receive</strong> a confirmation email in less than 24h</div>
+                                <div class="media-body"><strong>You will receive</strong> a confirmation message or callback soon</div>
                             </li>
                         </ul>
                     </div> <!-- end of text-container -->
@@ -212,23 +206,32 @@
 
                     <!-- Registration Form -->
                     <div class="form-container">
-                        <form id="registrationForm" data-toggle="validator" data-focus="false">
+                        <form id="gform" data-toggle="validator" data-focus="false"  action="">
                             <div class="form-group">
-                                <input type="text" class="form-control-input" id="rname" name="rname" required>
-                                <label class="label-control" for="rname">Complete name</label>
+                                <input type="text" class="form-control-input" id="Name" name="Name" required>
+                                <label class="label-control" for="Name">Complete name</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control-input" id="remail" name="remail" required>
-                                <label class="label-control" for="remail">Email address</label>
+                                <input type="email" class="form-control-input" id="Email" name="Email" required>
+                                <label class="label-control" for="Email">Email address</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control-input" id="rphone" name="rphone" required>
-                                <label class="label-control" for="rphone">Phone number</label>
+                                <input type="text" class="form-control-input" id="Phone" name="Phone" required>
+                                <label class="label-control" for="Phone">Phone number</label>
                                 <div class="help-block with-errors"></div>
                             </div>
-                           
+                            <div class="form-group">  
+                                    <select name="Course" id="Course" class="form-control-input" style="padding-bottom: 13px;"  required>
+                                        <option value="No Course Selected">Select Course</option>
+                                        <option value="Basic Package">Basic Package</option>
+                                        <option value="Standard Package">Standard Package</option>
+                                        <option value="Premium Package">Premium Package</option>
+                                    </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            
                             <div class="form-group">
                                 <button type="submit" class="form-control-submit-button">REGISTER</button>
                             </div>
@@ -238,65 +241,54 @@
                         </form>
                     </div> <!-- end of form-container -->
                     <!-- end of registration form -->
-                    
+                    <script>
+                       $("#gform").submit((e) => {
+                         e.preventDefault();
+                            $.ajax({
+                              url: "https://script.google.com/macros/s/AKfycbwyKZ8ez4SsFKHpe72wEMreFjKdSe0vqphq9UOqhoGlKZeI0RqGIH82tE2E9PkkEshSbQ/exec",
+                               data: $("#gform").serialize(),
+                                  method: "POST",
+                                    success: function (response) {
+                                      console.log("Response:", response);
+                                         alert("WE WILL CONTACT YOU SOON \n         THANK YOU!!");
+                                              window.location.reload();
+                                      },
+                                     error: function (err) {
+                                            console.error("Error:", err);
+                                         alert("Something went wrong. Please try again.");
+                                      }
+                                        });
+                                    });
+
+                    </script>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of form-1 -->
     <!-- end of registration -->
 
-    <!-- Partners -->
-    <div class="slider-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">FEATURED IN</p>
-
-                    <!-- Image Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container image-slider-2">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-1.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-2.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-3.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-4.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-5.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-6.png" alt="alternative">
-                                </div>
-                            </div> <!-- end of swiper-wrapper -->
-                        </div> <!-- end of swiper container -->
-                    </div> <!-- end of slider-container -->
-                    <!-- end of image slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider-1 -->
-    <!-- end of partners -->
+    
 
     <!-- Instructor -->
     <div id="instructor" class="basic-1">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="images/Images/Untitled-1.jpg" alt="alternative">
+                <div class="col-lg-6" style="display: flex; align-items: center;">
+                    <img class="img-fluid"  src="images/Images/Untitled-1.jpg" alt="alternative">
                 </div> <!-- end of col -->
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="margin-top: -37px;">
                     <div class="text-container">
-                        <h2>I’m Akhila Your Trainer</h2>
-                        <p>Hi everybody! I am Garry and I will be your main instructor durnig the GST training course. I have more than 10 years experience in GST and I am very passionate about this field. Register for the course and let's meet.</p>
-                        <p>Teaching students all about the beste GST techniques is something I love to do as a full-time job</p>
+                        <h2>I’m Akhila  <br> (GST Practitioner)</h2>
+                        <p>Hi everybody ! I am Akhila and I am committed to making GST compliance
+                            simple and hassle-free for businesses of all sizes. As a dedicated GST
+                            Practitioner, I bring years of expertise and a deep understanding of the
+                            evolving tax regulations in India.I pride myself
+                            on offering services that are not just accurate but also tailored to meet
+                            the unique needs of my clients. My mission is to empower businesses
+                            with the knowledge and support they need to remain compliant,
+                            minimize risks, and maximize their financial efficiency. With a focus on
+                            transparency, professionalism, and client satisfaction, I strive to build
+                            lasting relationships that ensure your GST compliance is in expert hands.</p>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -309,7 +301,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>What Will You Learn In Our SEO Focused Training Course</h2>
+                    <h2>WHY <br> UNIQUE SOUL TAX SOLUTIONS ?</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -318,22 +310,22 @@
                         <li class="media">
                             <i class="bullet">1</i>
                             <div class="media-body">
-                                <h4>Optimizing your site for mobile devices</h4>
-                                <p>One of the keys of great SEO is having a mobile friendly website which works smoothly on all devices</p>
+                                <h4>Expert Guidance</h4>
+                                <p>As a professional, I ensures the process is completed accurately and efficiently.</p>
                             </div>
                         </li>
                         <li class="media">
                             <i class="bullet">2</i>
                             <div class="media-body">
-                                <h4>Understand how users search</h4>
-                                <p>It's not enough anymore to find relevant industry keywords and write huge amounts of content </p>
+                                <h4>End-to-End Service</h4>
+                                <p>From consultation to GSTIN issuance, I manage every step, saving you time and effort.</p>
                             </div>
                         </li>
                         <li class="media">
                             <i class="bullet">3</i>
                             <div class="media-body">
-                                <h4>Write for humans optimize for engines</h4>
-                                <p>Write well structured and understandable articles not just a mix of paragraphs that contain keywords</p>
+                                <h4>Affordable and Transparent Pricing:</h4>
+                                <p>I offer competitive pricing with no hidden costs, ensuring you get the best value for your money.</p>
                             </div>
                         </li>
                     </ul>
@@ -343,22 +335,22 @@
                         <li class="media">
                             <i class="bullet">4</i>
                             <div class="media-body">
-                                <h4>Analyse your existing search traffic</h4>
-                                <p>A good action plan comes out of understanding where your current position is and the environment</p>
+                                <h4>Tailored Solutions</h4>
+                                <p>I provide customized GST services designed to meet the unique needs of your business, ensuring compliance, efficiency, and optimal tax benefits.</p>
                             </div>
                         </li>
                         <li class="media">
                             <i class="bullet">5</i>
                             <div class="media-body">
                                 <h4>Keep updated with the latest changes</h4>
-                                <p>Google changes it's search indexing algorithm twice a year so it's important to stay updated with news</p>
+                                <p>Stay informed about the latest developments to ensure you're always aligned with current trends and updates.</p>
                             </div>
                         </li>
                         <li class="media">
                             <i class="bullet">6</i>
                             <div class="media-body">
-                                <h4>Learn the most important ranking factors</h4>
-                                <p>Learn which are the most important search engine ranking factors and optimize your website accordnigly</p>
+                                <h4>GST Practical Course</h4>
+                                <p>We offer a comprehensive GST practical course available in three languages: Malayalam, English, and Kannada, ensuring accessibility for a diverse audience</p>
                             </div>
                         </li>
                     </ul>
@@ -375,8 +367,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Who Should Attend The SEO Training Course</h2>
-                        <p>This course is for anyone passionate about the web and especially fit for those seeking to improve their online presence for company websites and blogs </p>
+                        <h2>Who Should Attend The GST Practical Course</h2>
+                        <p>This GST Practical Course is perfect for business owners, accountants, tax consultants, students, and professionals who want to develop a strong understanding of GST, enhance their practical skills, and efficiently handle GST compliance in their work or business </p>
                         <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox">LIGHTBOX</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -400,28 +392,28 @@
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <h3>SEO Training Course</h3>
+                    <h3>GST practical Course</h3>
                     <hr>
                     <h5>For everybody</h5>
-                    <p>The training course is dedicates to anyone passionate about the web and in need of improving their current online presence.</p>
+                    <p>The GST Practical Course is designed for business owners, professionals, and students to master GST and manage compliance confidently</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Link building framework</div>
+                            <i class="fas fa-square"></i><div class="media-body">GST overview and registration</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Know your current position</div>
+                            <i class="fas fa-square"></i><div class="media-body">Filing GSTR 1, 3B, and 1A</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Partnering with blogs</div>
+                            <i class="fas fa-square"></i><div class="media-body">Advanced GSTR-9 and E-Invoice</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Naming your images</div>
+                            <i class="fas fa-square"></i><div class="media-body">GST compliance and refunds</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Creating good sitemaps</div>
+                            <i class="fas fa-square"></i><div class="media-body">Tax invoicing essentials covered</div>
                         </li>
                         <li class="media">
-                            <i class="fas fa-square"></i><div class="media-body">Writing for humans</div>
+                            <i class="fas fa-square"></i><div class="media-body">Composition Scheme and TDS filing</div>
                         </li>
                     </ul>
                     <a class="btn-solid-reg mfp-close page-scroll" href="#register">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
@@ -715,9 +707,14 @@
         </div> <!-- end of container -->
     </div> <!-- end of slider-2 -->
     <!-- end of testimonials -->
-     <div class="Location">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2771.203414746449!2d76.63499567722769!3d10.805686241345583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8712b5ef1e1ed%3A0x1b46d3c7e40e14f7!2sAkhila%20S%2C%20GST%20Practitioner!5e0!3m2!1sen!2sin!4v1731778074816!5m2!1sen!2sin" width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-     </div>
+   <div style="background-color: #fbf9f5;">
+        <div style="width: 100vw;  display: flex; align-items: center; justify-content: center; ">
+          <h3>Check Out More Reviews</h3>
+        </div>
+         <div class="Location" style="  margin-top: 20px; ">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2771.203414746449!2d76.63499567722769!3d10.805686241345583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8712b5ef1e1ed%3A0x1b46d3c7e40e14f7!2sAkhila%20S%2C%20GST%20Practitioner!5e0!3m2!1sen!2sin!4v1731778074816!5m2!1sen!2sin" width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+    </div> 
     <!-- Newsletter -->
     <div class="form-2">
         <div class="container">
