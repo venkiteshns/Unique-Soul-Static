@@ -218,7 +218,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control-input" id="Phone" name="Phone" required>
+                                <input type="tel" class="form-control-input" id="Phone" name="Phone" required>
                                 <label class="label-control" for="Phone">Phone number</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -241,26 +241,7 @@
                         </form>
                     </div> <!-- end of form-container -->
                     <!-- end of registration form -->
-                    <script>
-                       $("#gform").submit((e) => {
-                         e.preventDefault();
-                            $.ajax({
-                              url: "https://script.google.com/macros/s/AKfycbwyKZ8ez4SsFKHpe72wEMreFjKdSe0vqphq9UOqhoGlKZeI0RqGIH82tE2E9PkkEshSbQ/exec",
-                               data: $("#gform").serialize(),
-                                  method: "POST",
-                                    success: function (response) {
-                                      console.log("Response:", response);
-                                         alert("WE WILL CONTACT YOU SOON \n         THANK YOU!!");
-                                              window.location.reload();
-                                      },
-                                     error: function (err) {
-                                            console.error("Error:", err);
-                                         alert("Something went wrong. Please try again.");
-                                      }
-                                        });
-                                    });
-
-                    </script>
+                    
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -343,7 +324,7 @@
                             <i class="bullet">5</i>
                             <div class="media-body">
                                 <h4>Keep updated with the latest changes</h4>
-                                <p>Stay informed about the latest developments to ensure you're always aligned with current trends and updates.</p>
+                                <p>Stay informed about GST updates to ensure compliance, avoid penalties, and adapt smoothly to new regulations and benefits.</p>
                             </div>
                         </li>
                         <li class="media">
@@ -429,7 +410,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Course Video Presentation</h2>
+                    <h2>Course Video Presentation<br>In English</h2>
+                    
 
                     <!-- Video Preview -->
                     <div class="image-container">
@@ -446,6 +428,16 @@
 
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
+           <div class="row">
+                <div class="col-md-6">
+                    <h3>In Kannada</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ogh4_TbXRqE?si=ieyY856ei96rtUjq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+                </div>       
+                <div class="col-md-6" >
+                    <h3>In Malayalam</h3>
+                    <iframe width="540" height="315" src="https://www.youtube.com/embed/pQSOSHcVAdw?si=MTRpPsc52SY830Nm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
         </div> <!-- end of container -->
     </div> <!-- end of basic-4 -->
     <!-- end of video -->
@@ -640,18 +632,6 @@
                         <div class="swiper-container text-slider">
                             <div class="swiper-wrapper">
                                 
-                                 <!-- Slide -->
-                                 <div class="swiper-slide">
-                                    <div class="image-wrapper">
-                                        <img class="img-fluid" src="images/Review/Golden Elegence.jpg" alt="alternative">
-                                    </div> <!-- end of image-wrapper -->
-                                    <div class="text-wrapper">
-                                        <div class="testimonial-text">I had approached Akhila S for GST registration after searching through Google and YouTube. To my surprise, I have got a quick response from her asking for my details for registration of the same. She was so quick in completing the said registration at a very nominal fee. Before contacting her, I had approached few such authorised persons, but they replied very late and asked few times more fee for the same. Now I am ready to give all such work to her only. I am recommending Akhila S for all your GST and related registrations. I wish her all the best.</div>
-                                        <div class="testimonial-author">Golden Elegance</div>
-                                    </div> <!-- end of text-wrapper -->
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
 
                                 <!-- Slide -->
                                 <div class="swiper-slide">
@@ -661,6 +641,19 @@
                                     <div class="text-wrapper">
                                         <div class="testimonial-text">Akhila helps us with GST Tax preparation and is knowledgeable and prompt in delivering her services.  I would definitely recommend here services.</div>
                                         <div class="testimonial-author">K George</div>
+                                    </div> <!-- end of text-wrapper -->
+                                </div> <!-- end of swiper-slide -->
+                                <!-- end of slide -->
+
+
+                                 <!-- Slide -->
+                                 <div class="swiper-slide">
+                                    <div class="image-wrapper">
+                                        <img class="img-fluid" src="images/Review/Golden Elegence.jpg" alt="alternative">
+                                    </div> <!-- end of image-wrapper -->
+                                    <div class="text-wrapper">
+                                        <div class="testimonial-text">I had approached Akhila S for GST registration after searching through Google and YouTube. To my surprise, I have got a quick response from her asking for my details for registration of the same. She was so quick in completing the said registration at a very nominal fee. Before contacting her, I had approached few such authorised persons, but they replied very late and asked few times more fee for the same. Now I am ready to give all such work to her only. I am recommending Akhila S for all your GST and related registrations. I wish her all the best.</div>
+                                        <div class="testimonial-author">Golden Elegance</div>
                                     </div> <!-- end of text-wrapper -->
                                 </div> <!-- end of swiper-slide -->
                                 <!-- end of slide -->
@@ -788,19 +781,24 @@
                 <div class="col-lg-6">
 
                     <!-- Contact Form -->
-                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                    <form id="Contact-form" data-toggle="validator" data-focus="false" action="" >
                         <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
+                            <input type="text" class="form-control-input" id="cname" name="Name" required>
                             <label class="label-control" for="cname">Name</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
+                            <input type="tel" class="form-control-input" id="phone" name="Phone" required>
+                            <label class="label-control" for="phone">Phone Number</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" name="Email" required>
                             <label class="label-control" for="cemail">Email</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <textarea class="form-control-textarea" id="cmessage" name="Enquiry" required></textarea>
                             <label class="label-control" for="cmessage">Your message</label>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -824,51 +822,17 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <div class="footer-col first">
-                        <h5>About Corso</h5>
-                        <p class="p-small">We're passionate about teaching people how to do better SEO for their online presence</p>
+                        <h5>About Unique Soul</h5>
+                        <p class="p-small">Unique Soul Tax Solutions is committed to making<br> GST compliance simple and hassle-free for businesses of all sizes. <br>Unique Tax Solutins Offers GST practical course.</p>
                     </div>
                 </div> <!-- end of col -->
-                <div class="col-md-3">
-                    <div class="footer-col second">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-3">
-                    <div class="footer-col third">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-3">
+               
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4">
                     <div class="footer-col fourth">
                         <h5>Social Media</h5>
                         <p class="p-small">For news & updates follow us</p>
@@ -909,6 +873,55 @@
         </div> <!-- end of container -->
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
+    <script>
+        // Handle submission for Contact-form
+        $("#Contact-form").submit((e) => {
+            e.preventDefault(); // Prevent default submission
+            const serializedData = $("#Contact-form").serialize();
+    
+            // Debugging: Check serialized data
+            console.log("Serialized Data for Contact-form:", serializedData);
+    
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbyqP5prsShSeaHy_fTDx1WT1wQBb52iK2Ws4zRfl8hSMhDAGbZTX237f10nf6SGd0Iu/exec", // Contact-form script URL
+                data: serializedData,
+                method: "POST",
+                success: function (response) {
+                    console.log("Response for Contact-form:", response);
+                    alert("WE WILL CONTACT YOU SOON \n         THANK YOU!!");
+                    window.location.reload();
+                },
+                error: function (err) {
+                    console.error("Error for Contact-form:", err);
+                    alert("Something went wrong. Please try again.");
+                },
+            });
+        });
+    
+        // Ensure gform submission script is separate
+        $("#gform").submit((e) => {
+            e.preventDefault();
+            const serializedData = $("#gform").serialize();
+    
+            // Debugging: Check serialized data
+            console.log("Serialized Data for gform:", serializedData);
+    
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwyKZ8ez4SsFKHpe72wEMreFjKdSe0vqphq9UOqhoGlKZeI0RqGIH82tE2E9PkkEshSbQ/exec", // gform script URL
+                data: serializedData,
+                method: "POST",
+                success: function (response) {
+                    console.log("Response for gform:", response);
+                    alert("Submission successful. Thank you!");
+                    window.location.reload();
+                },
+                error: function (err) {
+                    console.error("Error for gform:", err);
+                    alert("Something went wrong. Please try again.");
+                },
+            });
+        });
+    </script>
     
     	
     <!-- Scripts -->
