@@ -2195,6 +2195,31 @@ a:hover.back-to-top {
 	}
 	/* end of footer */
 
+	/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .responsive-video {
+        width: 300px !important; /* Set width for mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Adjust navigation bar alignment */
+@media (max-width: 768px) {
+    .navbar-custom {
+        text-align: center;
+        padding: 10px;
+    }
+    .navbar-toggler {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+}
 
 	/* Extra Pages */
 	.ex-header h1 {
