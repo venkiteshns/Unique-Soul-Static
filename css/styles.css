@@ -1359,10 +1359,8 @@ input[type='checkbox'] {
 	width: 70vw;
 	margin-top: 10px;
 }
-.iframe-alignment{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.y-alignment{
+	margin-top: 10px;
 }
 /********************/
 /*     14. Date     */
