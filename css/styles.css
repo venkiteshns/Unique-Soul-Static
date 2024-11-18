@@ -1350,13 +1350,20 @@ input[type='checkbox'] {
 	background-size: 1.125rem 1.75rem;
 }
 
-.Location{
-	width: 100vw;
+.Certificate{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
+.Certificate-content{
+	width: 70vw;
+	margin-top: 10px;
+}
+.iframe-alignment{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 /********************/
 /*     14. Date     */
 /********************/
