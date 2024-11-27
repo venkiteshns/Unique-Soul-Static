@@ -371,6 +371,55 @@
         }
     });
 
+      // Handle submission for Contact-form
+      $("#Contact-form").submit((e) => {
+        e.preventDefault(); // Prevent default submission
+        const serializedData = $("#Contact-form").serialize();
+
+        // Debugging: Check serialized data
+        console.log("Serialized Data for Contact-form:", serializedData);
+
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbzZv99E-cq58XjEnk3L7ZG-_llgbfj09iYTD8MFJE89GXLoDejWQgAfmGds331INykw/exec", // Contact-form script URL
+            data: serializedData,
+            method: "POST",
+            success: function (response) {
+                console.log("Response for Contact-form:", response);
+                alert("WE WILL CONTACT YOU SOON \n         THANK YOU!!");
+                window.location.reload();
+            },
+            error: function (err) {
+                console.error("Error for Contact-form:", err);
+                alert("Something went wrong. Please try again.");
+            },
+        });
+    });
+
+    // Ensure gform submission script is separate
+    $("#gform").submit((e) => {
+        e.preventDefault();
+        const serializedData = $("#gform").serialize();
+
+        // Debugging: Check serialized data
+        console.log("Serialized Data for gform:", serializedData);
+
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbx6z_zxfX0TuPJ79hw_WpGUS9BhgYnGs3wVucWmqlMlgXP_jojRYODGahmCFM4D1Td76A/exec", // gform script URL
+            data: serializedData,
+            method: "POST",
+            success: function (response) {
+                console.log("Response for gform:", response);
+                alert("WE WILL CONTACT YOU SOON \n         THANK YOU!!");
+                window.location.reload();
+            },
+            error: function (err) {
+                console.error("Error for gform:", err);
+                alert("Something went wrong. Please try again.");
+            },
+        });
+    });
+
+
     function psubmitForm() {
         // initiate variables with form content
 		var name = $("#pname").val();

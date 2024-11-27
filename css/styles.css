@@ -185,8 +185,8 @@ a:hover {
 }
 
 .btn-outline-lg {
-	display: inline-block;
-	padding: 1.375rem 2.625rem 1.375rem 2.625rem;
+	display: block;
+	padding: 1.375rem 0 1.375rem 0;
 	border: 0.125rem solid #333;
 	border-radius: 2rem;
 	background-color: transparent;
@@ -194,7 +194,30 @@ a:hover {
 	font: 600 0.875rem/0 "Montserrat", sans-serif;
 	text-decoration: none;
 	transition: all 0.2s;
+	text-align: center; /* Ensure the text is centered */
+	
 }
+
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+    .btn-outline-lg {
+        display: block;
+        width: 100%; /* Make the button full width */
+        text-align: center; /* Ensure the text is centered */
+    }
+}
+
+.image-align-top-custom{
+	margin-top: 15%;
+}
+
+@media (max-width: 991.20px) {
+	.image-align-top-custom {
+	  margin-top: 0;
+	}
+  }
+
 
 .btn-outline-lg:hover {
 	border: 0.125rem solid #ffbd50;
@@ -763,10 +786,13 @@ input[type='checkbox'] {
 .header {
 	position: relative;
 	padding-top: 8rem;
-	padding-bottom: 40%;
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/header-background.jpg') center center no-repeat;
+
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8)  ,rgba(0, 0, 0, 0.8)  ) , url('../images/header-background.jpg') center center no-repeat;
 	background-size: cover;
 	text-align: center;
+}
+.section{
+	background-color: #fbf9f5;
 }
 
 .header .countdown {
@@ -828,8 +854,8 @@ input[type='checkbox'] {
 	color: #333;
 }
 
-.header .outer-container {
-	position: absolute;
+.section .outer-container {
+	text-align: center;
 	right: 0;
 	bottom: -2rem;
 	left: 0;
@@ -838,33 +864,30 @@ input[type='checkbox'] {
 	width: 100%;
 }
 
-.header .slider-container {
-	position: relative;
-}
 
-.header .swiper-container {
-	position: static;
+
+.section .swiper-container {
 	width: 80%;
 	border-radius: 0.75rem;
 }
 
-.header .swiper-container img {
+.section .swiper-container img {
 	border-radius: 0.75rem;
 }
 
-.header .swiper-button-prev:focus,
-.header .swiper-button-next:focus {
+.section .swiper-button-prev:focus,
+.section .swiper-button-next:focus {
 	/* even if you can't see it chrome you can see it on mobile device */
 	outline: none;
 }
 
-.header .swiper-button-prev {
+.section .swiper-button-prev {
 	left: 0.25rem;
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 	background-size: 1.125rem 1.75rem;
 }
 
-.header .swiper-button-next {
+.section .swiper-button-next {
 	right: 0.25rem;
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 	background-size: 1.125rem 1.75rem;
@@ -952,7 +975,7 @@ input[type='checkbox'] {
 .basic-1 {
 	padding-top: 3.75rem;
 	padding-bottom: 3.5rem;
-	background-color: #fbf9f5;
+
 }
 
 .basic-1 h2 {
@@ -1123,7 +1146,23 @@ input[type='checkbox'] {
 	color: #707984;
 }
 
+.text-alignment{
+	display: flex;
+	justify-content: center;
+	background-color: #fbf9f5;
+}
 
+.location{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fbf9f5;
+}
+
+.location iframe{
+	margin-top: 40px;
+	margin-bottom: 90px;
+}
 /*********************/
 /*     11. Video     */
 /*********************/
@@ -1600,7 +1639,7 @@ input[type='checkbox'] {
 a.back-to-top {
 	position: fixed;
 	z-index: 999;
-	right: 0.75rem;
+	right: 1.5rem;
 	bottom: 0.75rem;
 	display: none;
 	width: 2.625rem;
@@ -2075,7 +2114,7 @@ a:hover.back-to-top {
 	
 	/* Header */
 	.header {
-		padding-bottom: 31rem;
+		padding-bottom: 2rem;
 	}
 
 	.header .outer-container {
@@ -2099,7 +2138,7 @@ a:hover.back-to-top {
 
 	/* Registration */
 	.form-1 {
-		padding-top: 12rem;
+		padding-top: 3rem;
 	}
 
 	.form-1 .text-container {
@@ -2117,6 +2156,7 @@ a:hover.back-to-top {
 	.basic-1 .text-container {
 		margin-top: 3.125rem;
 		margin-left: 3.5rem;
+		
 	}
 	/* end of instructor */
 
